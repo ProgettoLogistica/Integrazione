@@ -26,7 +26,8 @@ exports.findByIdUser = function (req, res) {
     Parcel.findByIdUser(req.params.id, function (err, parcel) {
         if (err)
             res.send(err);
-        res.json(parcel);
+        // res.json(parcel);
+        res.status(200).render('parcels-general-list', { parcels: parcel });
     });
 };
 
@@ -47,7 +48,7 @@ exports.findAll = function (req, res) {
         //res.json(parcel);
         //aggiunta
         res.status(200).render('mappa', { parcels: parcel });
-    });     
+    });
 };
 
 exports.update = function (req, res) {

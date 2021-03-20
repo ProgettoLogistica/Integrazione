@@ -17,6 +17,10 @@
 </head>
 
 <body>
+    <%
+        if(parcels.length != 0){
+            var i=1;
+            %>
     <table>
         <thead>
             <tr>
@@ -24,13 +28,9 @@
                 <th>Stato Pacco</th>
             </tr>
         </thead>
+        <% parcels.forEach(parcel =>{
+    %>
         <tbody>
-            <%
-            if(parcels.length != 0){
-                var i=1;
-                parcels.forEach(parcel =>{
-        %>
-
             <tr>
                 <td><%=i; %></td>
                 <% let status;
@@ -45,15 +45,13 @@
                 <td><%=status %></td>
             </tr>
             <%      i++; }) %>
-            <% } else { %>
-
-            <tr>
-                <td>You haven't parcels!</td>
-            </tr>
-
-            <% } %>
         </tbody>
     </table>
+    <% } else { %>
+    <p>You haven't parcels!</p>
+
+    <% } %>
+
 </body>
 
 </html>

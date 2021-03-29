@@ -18,7 +18,8 @@ exports.findById = function (req, res) {
     Parcel.findById(req.params.id, function (err, parcel) {
         if (err)
             res.send(err);
-        res.json(parcel);
+        //res.json(parcel);
+        res.status(200).render('parcel-detail-list', { parcels: parcel });
     });
 };
 

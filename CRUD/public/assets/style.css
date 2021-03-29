@@ -2,39 +2,24 @@ body{
     font-family: 'Poppins', sans-serif; 
 }
 #map{
-    width: 25em; 
-    height: 15em; 
-    margin-top: 5em;
-    margin-left: 3em;
+    width: 22rem; 
+    height: 13rem; 
+    margin-top: 5rem;
+    margin-left: 3rem;
     border-radius: 1rem;
 }
 
 #detailTable{
     position: relative;
-    top: 4em;
-    left: 50em;
-    width: 33em;
-    height: 23em;
-    box-shadow: 0.5em 0.5em 2em #23374D;
+    top: 4rem;
+    left: 50rem;
+    width: 33rem;
+    height: 23rem;
+    box-shadow: 0.5rem 0.5rem 2rem #23374D;
 }
-
-#detail tr:nth-child(2n-1) {
-    background-color: #EEEEEE;
-}
-
-#detail td, #detail th{
-    border-top: 0.1vh solid #9ba5b1;
-    
-}
-
 #last-row td, #last-row th{
-    border-bottom: 0.1vh solid #0085FF;
+    border-bottom: 0.4vh solid #0085FF;
 }
-
-#detail tbody{
-    text-align: left;
-}
-
 #detail th{
     color:#23374D;
 }

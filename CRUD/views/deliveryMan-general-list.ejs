@@ -81,7 +81,8 @@
                             var col2 = row.insertCell(1);
 
                             // ID - Indirizzo
-                            col1.innerHTML = i;
+                            var id = <%= parcel.id %>;
+                            col1.innerHTML = "<a href=\"http://127.0.0.1:5000/api/v1/parcels/"+id+"\">"+i+"</a>";
                             col2.innerHTML = result.address.Match_addr;
                             i++;
                         });

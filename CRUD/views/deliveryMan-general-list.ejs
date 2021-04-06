@@ -49,14 +49,14 @@
             <table class="table table-striped" id="position">
                 <thead>
                     <tr>
-                        <th>ID Pacco</th>
+                        <th>ID</th>
                         <th>Stato Pacco</th>
                     </tr>
                 </thead>
                 <tbody>
                 </tbody>
                 <script>
-                    var map = L.map('map').setView(['<%-parcels[1].x%>', '<%-parcels[1].y%>'], 13);
+                    var map = L.map('map').setView(['<%-parcels[0].x%>', '<%-parcels[0].y%>'], 13);
 
                     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         attribution: '&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -82,7 +82,7 @@
 
                             // ID - Indirizzo
                             var id = <%= parcel.id %>;
-                            col1.innerHTML = "<a href=\"http://127.0.0.1:5000/api/v1/parcels/"+id+"\">"+i+"</a>";
+                            col1.innerHTML = "<a href=\"http://127.0.0.1:5000/api/v1/parcels/" + id + "\">" + i + "</a>";
                             col2.innerHTML = result.address.Match_addr;
                             i++;
                         });

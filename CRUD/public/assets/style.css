@@ -22,6 +22,12 @@ body{
     height: 78rem;
     background: #0085FF;
     border-radius: 50%;
+    z-index: -2;
+}
+
+#delivery-truck {
+    width: 300px;
+    height: 300px;
     z-index: -1;
 }
 
@@ -36,27 +42,36 @@ body{
     top: 3em;
 }
 
-#detailTable, #position {
+#detailTable, #position, #user {
     position: relative;
-    top: -15em;
-    left: 60%;
+    top: -20em;
+    left: 57%;
     width: 30em;
     height: 20em;
     box-shadow: 0.5em 0.5em 2em #23374D;
 }
+
 #last-row td, #last-row th{
     border-bottom: 0.4vh solid #0085FF;
 }
-#detailTable th{
-    color:#23374D;
-}
 
-#detailTable td, #position td{
+#detailTable td, #user td, #position td{
     color: #0085FF;
 }
 
-#position th {
+#position th, #user th, #detailTable th {
+    color: white;
     background-color: #0085FF;
+    text-transform: uppercase;
+}
+
+#position td, #user td {
+    text-transform: capitalize;
+}
+
+#user {
+    top: 0;
+    right: 3em;
 }
 
 .navbar {

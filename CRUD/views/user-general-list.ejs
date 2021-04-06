@@ -5,48 +5,60 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Parcels General List</title>
-    <style>
-        table,
-        td,
-        th {
-            border: solid 1px black;
-            border-collapse: collapse;
-        }
-    </style>
+
+    <!-- CSS -->
+    <link href="/assets/style.css" rel="stylesheet" type="text/css" />
+    <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+    <!--font-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap" rel="stylesheet">
+
+    <!-- bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
 </head>
 
 <body>
-    <%
-        if(users.length != 0){
-            users.forEach(user =>{
-    %>
-    <table>
-        <thead>
-            <tr>
-                <th>Nome</th>
-                <th>Cognome</th>
-                <th>Indirizzo</th>
-                <th>Telefono</th>
-                <th>Email</th>
-            </tr>
-        </thead>
-        <tbody>
-
-            <tr>
-                <td><%=user.first_name %></td>
-                <td><%=user.last_name %></td>
-                <td><%=user.address %></td>
-                <td><%=user.phone %></td>
-                <td><%=user.email %></td>
-            </tr>
-            <%      }) %>
-        </tbody>
-    </table>
-    <% } else { %>
-
-    <p>The user does not exist!</p>
-
-    <% } %>
+    <%- include('../public/partials/header.ejs')%>
+    <div id="circle"></div>
+    <!-- <div id="delivery-truck"><img src="../public/img/delivery-truck.png" alt=""></div> -->
+    <div id="table">
+        <table class="table table-striped" id="user">
+            <tbody>
+                <tr>
+                    <th>Cognome</th>
+                    <td>
+                        <%= users[0].last_name%>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Nome</th>
+                    <td>
+                        <%= users[0].first_name%>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Indirizzo</th>
+                    <td>
+                        <%= users[0].address %>
+                    </td>
+                </tr>
+                <tr>
+                    <th>Telefono</th>
+                    <td>
+                        <%= users[0].phone %>
+                    </td>
+                </tr>
+                <tr id="last-row">
+                    <th>Email</th>
+                    <td>
+                        <%= users[0].email%>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 
 </html>

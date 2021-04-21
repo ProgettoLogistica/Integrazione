@@ -76,7 +76,7 @@
             tileSize: 512,
             zoomOffset: -1
         });
-        var map = L.map('map').addLayer(mapboxTiles).setView([<%= parcels[0].x %>,<%= parcels[0].y %>], 13, 5);
+        var map = L.map('map').addLayer(mapboxTiles).setView([<%= parcels[0].x %>, <%= parcels[0].y %>], 13, 5);
         var marker = L.marker([<%= parcels[0].x %>,<%= parcels[0].y %>]).addTo(map);
     </script>
 </body>

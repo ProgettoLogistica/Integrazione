@@ -22,6 +22,12 @@
 <body>
     <%- include('../public/partials/header.ejs')%>
     <div id="circle"></div>
+    <!-- <div id="delivery-truck">
+        <img src="../public/img/delivery-truck.png" alt="">
+    </div> -->
+    <div id="buttons">
+        <a href="localhost:5000/api/v1/parcels/<%= users[0].id %>" type="button" class="btn btn-light">INDIETRO</a>
+    </div>
     <!-- <div id="delivery-truck"><img src="../public/img/delivery-truck.png" alt=""></div> -->
     <div id="table">
         <table class="table table-striped" id="user">

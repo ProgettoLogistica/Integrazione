@@ -8,13 +8,6 @@ const conn = mysql.createConnection({
   database: 'logistica'
 });
 
-var pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: 'veronica',
-  database: 'logistica'
-});
-
 conn.connect(function (err) {
   if (err) throw err;
   console.log("Database Connected!");

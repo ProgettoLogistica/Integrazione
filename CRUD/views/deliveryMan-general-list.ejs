@@ -38,6 +38,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
+    <!-- Leaflet Map -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-routing-machine/3.2.12/leaflet-routing-machine.min.js"></script>
+
 </head>
 
 <body>
@@ -67,13 +72,15 @@
 
                     var i = 1;
                     var table = document.getElementById("position");
+                    var points = [];
                 // Per ogni pacco viene aggiunto il marker sulla mappa e aggiunti i valori relativi al pacco nella tabella
                 <% parcels.forEach(parcel => { %>
                 var latlng = ['<%-parcel.x%>', '<%-parcel.y%>'];
                         geocodeService.reverse().latlng(latlng).run(function (error, result) {
                             if (error) return;
                             L.marker(result.latlng).addTo(map).bindPopup(result.address.Match_addr).openPopup();
-
+                            var coord = L.latLng(<%= parcel.x %>, <%= parcel.y %>);
+		                    points.push(coord);
                             // Aggiunta alla tabella
                             var row = table.insertRow(i);
                             var col1 = row.insertCell(0);
@@ -86,6 +93,13 @@
                             i++;
                         });
                 <% }) %>
+                console.log(points);
+                L.Routing.control({
+                     waypoints: [
+                         L.latLng(<%= parcels[0].x %>, <%= parcels[0].y %>),
+                         L.latLng(<%= parcels[1].x %>, <%= parcels[1].y %>)
+                     ]
+                }).addTo(map);
                 </script>
             </table>
         </div>
